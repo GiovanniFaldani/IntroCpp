@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
+#include "Operatori.h"
+#include "Puntatori.h"
 #include "IntroCpp.h"
+#include "Esercizi/EserciziLezione2.h"
 
 using namespace std;
 
@@ -29,6 +32,10 @@ struct Studente {
 
 int main() 
 {
+	// esempio di operatore incremento
+	Mese* meseCorrente = new Mese();
+	int giorno = 0;
+
 	// print Hello to the console
 	cout << "Hello World!\n";
 
@@ -99,11 +106,100 @@ int main()
 
 	cout << "Area rettangolo: " << area << '\n';
 
-	cin.get();
-
 	// Stampa le dimensioni dei tipi composti e dei loro membri
 
+
+
 	// Esempi di weapon
+	/*WeaponEsercizio* arma1{ new WeaponEsercizio() };
+
+	arma1->Informazioni();*/
+
+	// Operatori
+	giorno = meseCorrente->Incrementa();
+
+	cout << "Valore giorno: " << giorno << '\n';
+
+
+	// Puntatori
+
+	Weapon* spada = new Weapon();
+
+	spada->initPointers();
+
+	int* newInt = new int(42);
+
+	delete spada; // free della memoria
+	spada = nullptr; // svuota il puntatore per evitare di puntare a garbage
+
+	if (spada == nullptr) 
+	{
+		cout << "Puntatore spada e' nullptr dopo delete" << '\n';
+	}
+	else
+	{
+		spada->initPointers();
+	}
+
+
+	// Esercizi lezione 2
+
+	/*EserciziLezione2OperatoriEStruttureDiControllo* eserciziLezione2Parte1 = new EserciziLezione2OperatoriEStruttureDiControllo();
+
+	eserciziLezione2Parte1->Esercizio1();
+
+	eserciziLezione2Parte1->Esercizio2();
+
+	eserciziLezione2Parte1->Esercizio3();
+
+	eserciziLezione2Parte1->Esercizio4();
+
+	eserciziLezione2Parte1->Esercizio5();
+
+	eserciziLezione2Parte1->Esercizio6();
+
+	eserciziLezione2Parte1->Esercizio7();
+
+	eserciziLezione2Parte1->Esercizio8();
+
+	eserciziLezione2Parte1->Esercizio9();
+
+	eserciziLezione2Parte1->Esercizio10();*/
+
+	EserciziLezione2Puntatori* eserciziLezione2Puntatori = new EserciziLezione2Puntatori();
+
+	eserciziLezione2Puntatori->Esercizio1();
+
+	eserciziLezione2Puntatori->Esercizio2();
+
+	// Eserczio 3
+	int valore{ 5 };
+	cout << "Valore prima di raddoppia: " << valore << '\n';
+	eserciziLezione2Puntatori->raddoppia(&valore);
+	cout << "Valore dopo raddoppia: " << valore << '\n';
+	cout << '\n';
+
+	// Esercizio 4
+	int valore1{ 10 }, valore2{ 20 };
+	cout << "Valori prima di scambia: " << valore1 << " " << valore2 << '\n';
+	eserciziLezione2Puntatori->scambia(&valore1, &valore2);
+	cout << "Valori dopo scambia: " << valore1 << " " << valore2 << '\n';
+	cout << '\n';
+
+	eserciziLezione2Puntatori->Esercizio5();
+
+	eserciziLezione2Puntatori->Esercizio6();
+
+	eserciziLezione2Puntatori->Esercizio7();
+
+	eserciziLezione2Puntatori->Esercizio8();
+
+	eserciziLezione2Puntatori->Esercizio9();
+
+	eserciziLezione2Puntatori->Esercizio10();
+
+
+	std::cin.get();
 
 	return 0;
 }

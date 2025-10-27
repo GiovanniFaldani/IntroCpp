@@ -1,4 +1,8 @@
 #pragma once // garantisce che questo file sia incluso una sola volta
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 class Rettangolo
 {
@@ -38,3 +42,24 @@ protected:
 
 
 */
+
+class WeaponEsercizio
+{
+private:
+	string nome{};
+	string tipo{};
+	int munizioni{};
+	float tempoRicarica{};
+	bool inceppata{};
+	int danno{};
+
+public:
+
+	WeaponEsercizio();
+
+	WeaponEsercizio(string newNome, string newTipo, int newMunizioni, float newTempoRicarica, bool newInceppata, int newDanno);
+
+	int ApplicaDanno(int valoreIniziale);
+
+	void Informazioni();
+};
