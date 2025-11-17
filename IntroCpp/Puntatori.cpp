@@ -50,3 +50,11 @@ void Weapon::setCalcolatrice(Calcolatrice* calcolatrice)
 {
 	this->calcolatricePointer = calcolatrice;
 }
+
+void Weapon::esempioPuntatori() {
+	Weapon* spada = new Weapon();
+}
+
+string Weapon::getName() {
+	return this->Name;
+}

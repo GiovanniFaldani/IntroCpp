@@ -1,9 +1,11 @@
 #include <iostream>
+#include <algorithm>
 #include <string>
 #include "Operatori.h"
 #include "Puntatori.h"
 #include "IntroCpp.h"
 #include "Esercizi/EserciziLezione2.h"
+#include "Static.h"
 
 using namespace std;
 
@@ -166,38 +168,73 @@ int main()
 
 	eserciziLezione2Parte1->Esercizio10();*/
 
-	EserciziLezione2Puntatori* eserciziLezione2Puntatori = new EserciziLezione2Puntatori();
+	//EserciziLezione2Puntatori* eserciziLezione2Puntatori = new EserciziLezione2Puntatori();
 
-	eserciziLezione2Puntatori->Esercizio1();
+	//eserciziLezione2Puntatori->Esercizio1();
 
-	eserciziLezione2Puntatori->Esercizio2();
+	//eserciziLezione2Puntatori->Esercizio2();
 
-	// Eserczio 3
-	int valore{ 5 };
-	cout << "Valore prima di raddoppia: " << valore << '\n';
-	eserciziLezione2Puntatori->raddoppia(&valore);
-	cout << "Valore dopo raddoppia: " << valore << '\n';
-	cout << '\n';
+	//// Eserczio 3
+	//int valore{ 5 };
+	//cout << "Valore prima di raddoppia: " << valore << '\n';
+	//eserciziLezione2Puntatori->raddoppia(&valore);
+	//cout << "Valore dopo raddoppia: " << valore << '\n';
+	//cout << '\n';
 
-	// Esercizio 4
-	int valore1{ 10 }, valore2{ 20 };
-	cout << "Valori prima di scambia: " << valore1 << " " << valore2 << '\n';
-	eserciziLezione2Puntatori->scambia(&valore1, &valore2);
-	cout << "Valori dopo scambia: " << valore1 << " " << valore2 << '\n';
-	cout << '\n';
+	//// Esercizio 4
+	//int valore1{ 10 }, valore2{ 20 };
+	//cout << "Valori prima di scambia: " << valore1 << " " << valore2 << '\n';
+	//eserciziLezione2Puntatori->scambia(&valore1, &valore2);
+	//cout << "Valori dopo scambia: " << valore1 << " " << valore2 << '\n';
+	//cout << '\n';
 
-	eserciziLezione2Puntatori->Esercizio5();
+	//eserciziLezione2Puntatori->Esercizio5();
 
-	eserciziLezione2Puntatori->Esercizio6();
+	//eserciziLezione2Puntatori->Esercizio6();
 
-	eserciziLezione2Puntatori->Esercizio7();
+	//eserciziLezione2Puntatori->Esercizio7();
 
-	eserciziLezione2Puntatori->Esercizio8();
+	//eserciziLezione2Puntatori->Esercizio8();
 
-	eserciziLezione2Puntatori->Esercizio9();
+	//eserciziLezione2Puntatori->Esercizio9();
 
-	eserciziLezione2Puntatori->Esercizio10();
+	//eserciziLezione2Puntatori->Esercizio10();
 
+	Weapon* primaryWeapon = new Weapon(30, "Laser");
+
+	if (primaryWeapon != nullptr) 
+	{
+		cout << primaryWeapon->getName() << '\n';
+	}
+
+	delete primaryWeapon;
+	primaryWeapon = nullptr;
+
+	if (!primaryWeapon) 
+	{
+		cout << "Null pointer" << '\n';
+	}
+
+	primaryWeapon = new Weapon(50, "Rifle");
+
+	cout << primaryWeapon->getName() << '\n';
+
+	delete primaryWeapon;
+	primaryWeapon = nullptr;
+
+	Static* s1 = new Static();
+	Static* s2 = new Static();
+	Static* s3 = new Static();
+
+	delete s1;
+	s1 = nullptr;
+
+	cout << Static::count << '\n'; // accesso a variabile statica senza istanza
+
+	delete s2;
+	s2 = nullptr;
+
+	cout << Static::getCount() << '\n'; // accesso a metodo statico senza istanza
 
 	std::cin.get();
 
