@@ -1,11 +1,13 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+#include <vector>
 #include "Operatori.h"
 #include "Puntatori.h"
 #include "IntroCpp.h"
 #include "Interfaccia.h"
 #include "Esercizi/EserciziLezione2.h"
+#include "Esercizi/EserciziInterfacce.h"
 #include "Static.h"
 
 using namespace std;
@@ -259,6 +261,31 @@ int main()
 	delete m1;
 	w1 = nullptr;
 	m1 = nullptr;
+
+	std::vector<IDrawable*> forme;
+
+	Circle* c1 = new Circle("Cerchio");
+	Square* sq1 = new Square("Quadrato");
+
+	IDrawable* d1 = c1;
+	IDrawable* d2 = sq1;
+	
+	forme.push_back(d1);
+	forme.push_back(d2);
+
+	for(IDrawable* forma : forme)
+	{
+		forma->Draw();
+	}
+
+	d1 = nullptr;
+	d2 = nullptr;
+
+	delete c1;
+	delete sq1;	
+	c1 = nullptr;
+	sq1 = nullptr;
+
 
 	std::cin.get();
 

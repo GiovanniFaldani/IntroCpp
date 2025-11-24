@@ -56,6 +56,7 @@ private:
 };
 
 
-class WeaponTrace : public Weapon, public IInterfaccia {
-
-};
+//class WeaponTrace : public Weapon, public IInterfaccia 
+//{
+//
+//};
