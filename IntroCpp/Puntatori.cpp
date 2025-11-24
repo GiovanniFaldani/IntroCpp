@@ -56,5 +56,9 @@ void Weapon::esempioPuntatori() {
 }
 
 string Weapon::getName() {
-	return this->Name;
+	return this->name;
+}
+
+void Weapon::Interact() {
+	std::cout << "Interagito con la nostra weapon" << '\n';
 }

@@ -5,6 +5,8 @@ int Rettangolo::calcoloArea() const
 	return larghezza * altezza;
 }
 
+WeaponEsercizio::WeaponEsercizio() {}
+
 WeaponEsercizio::WeaponEsercizio(string newNome, string newTipo, int newMunizioni, float newTempoRicarica, bool newInceppata, int newDanno)
 {
 	nome = newNome;

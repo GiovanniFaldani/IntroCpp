@@ -1,10 +1,12 @@
 #pragma once
-#include<string>
 #include"StruttureDiControllo.h"
+#include "Interfaccia.h"
+#include <string>
+#include <vector>
 
 using namespace std;
 
-class Weapon
+class Weapon : public IInterfaccia
 {
 public:
 	Weapon();
@@ -12,7 +14,7 @@ public:
 	Weapon(int InitDamage, string InitName)
 	{
 		this->WeaponDamage = InitDamage;
-		this->Name = InitName;
+		this->name = InitName;
 	};
 
 	~Weapon();
@@ -32,7 +34,7 @@ public:
 	int Damage(int danno, int multiplier, int* totaldamage);
 
 	int WeaponDamage;
-	string Name = "";
+	string name = "";
 
 	int DamageRef(int danno, int multiplier, int& totaldamage);
 
@@ -42,10 +44,18 @@ public:
 
 	string getName();
 
+	// implementazione dell'interfaccia
+	void Interact() override;
+
 private:
 
 	int HP = 100;
 
 
+
+};
+
+
+class WeaponTrace : public Weapon, public IInterfaccia {
 
 };

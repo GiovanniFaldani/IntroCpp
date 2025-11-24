@@ -4,6 +4,7 @@
 #include "Operatori.h"
 #include "Puntatori.h"
 #include "IntroCpp.h"
+#include "Interfaccia.h"
 #include "Esercizi/EserciziLezione2.h"
 #include "Static.h"
 
@@ -235,6 +236,29 @@ int main()
 	s2 = nullptr;
 
 	cout << Static::getCount() << '\n'; // accesso a metodo statico senza istanza
+
+	// Interfaccia example
+
+	Weapon* w1 = new Weapon(25, "AK47");
+
+	Mese* m1 = new Mese();
+
+	// Entrambe le classi possono essere trattate come istanze di interfaccia per accedere alle proprietà comuni
+	IInterfaccia* i1 = w1;
+	IInterfaccia* i2 = m1;
+
+	i1->Interact();
+
+	i1->displayMessage();
+	i2->Interact();
+
+	i1 = nullptr;
+	i2 = nullptr;
+
+	delete w1;
+	delete m1;
+	w1 = nullptr;
+	m1 = nullptr;
 
 	std::cin.get();
 

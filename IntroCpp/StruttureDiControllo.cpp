@@ -5,15 +5,15 @@ void Calcolatrice::EsempioIfElse(int numero)
 {
 	if (numero > 0)
 	{
-		// Il numero � positivo
+		// Il numero è positivo
 	}
 	else if (numero < 0)
 	{
-		// Il numero � negativo
+		// Il numero è negativo
 	}
 	else
 	{
-		// Il numero � zero
+		// Il numero è zero
 	}
 }
 
@@ -22,19 +22,19 @@ void Calcolatrice::EsempioSwitchCase(GiorniSettimana operatore)
 	switch (operatore)
 	{
 	case Lunedi:
-		// Azioni per Luned�
+		// Azioni per Lunedì
 		break;
 	case Martedi:
-		// Azioni per Marted�
+		// Azioni per Martedì
 		break;
 	case Mercoledi:
-		// Azioni per Mercoled�
+		// Azioni per Mercoledì
 		break;
 	case Giovedi:
-		// Azioni per Gioved�
+		// Azioni per Giovedì
 		break;
 	case Venerdi:
-		// Azioni per Venerd�
+		// Azioni per Venerdì
 		break;
 	case Sabato:
 		// Azioni per Sabato
