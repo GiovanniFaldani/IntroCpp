@@ -129,6 +129,8 @@
     <ClCompile Include="IntroCpp\Static.cpp" />
     <ClCompile Include="IntroCpp\StruttureDiControllo.cpp" />
     <ClCompile Include="IntroCpp\Esercizi\EserciziInterfacce.cpp" />
+    <ClCompile Include="IntroCpp\Delegate.cpp" />
+
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IntroCpp\Esercizi\EserciziLezione2.h" />
@@ -138,6 +140,8 @@
     <ClInclude Include="IntroCpp\Static.h" />
     <ClInclude Include="IntroCpp\StruttureDiControllo.h" />
     <ClInclude Include="IntroCpp\Esercizi\EserciziInterfacce.h" />
+    <ClCompile Include="IntroCpp\Delegate.h" />
+
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <functional>
 #include <algorithm>
 #include <string>
 #include <vector>
@@ -6,6 +7,7 @@
 #include "Puntatori.h"
 #include "IntroCpp.h"
 #include "Interfaccia.h"
+#include "Delegate.h"
 #include "Esercizi/EserciziLezione2.h"
 #include "Esercizi/EserciziInterfacce.h"
 #include "Static.h"
@@ -286,6 +288,35 @@ int main()
 	c1 = nullptr;
 	sq1 = nullptr;
 
+	// DELEGATE
+
+	Delegate* delegate = new Delegate();
+	Weapon* w2 = new Weapon(40, "Sniper");
+
+	// bind di Weapon al nostro delegate
+	delegate->onOverlap = std::bind(&Weapon::initPointers, w2);
+
+	delegate->subscribers.push_back(std::bind(&Weapon::initPointers, w2));
+	delegate->subscribers.push_back(std::bind(&Weapon::initPointers, w2));
+
+	std::cout << "Calling the delegate directly:\n";
+	delegate->onOverlap();
+	std::cout << "\n\n";
+
+	std::cout << "Calling the delegate via method:\n";
+	delegate->OverlapEvent();
+	std::cout << "\n\n";
+
+
+	std::cout << "Calling multiple subscribed functions:\n";
+	delegate->OnMultipleOverlapEvents();
+	std::cout << "\n\n";
+
+
+	delete delegate;
+	delete w2;
+	delegate = nullptr;
+	w2 = nullptr;
 
 	std::cin.get();
 
